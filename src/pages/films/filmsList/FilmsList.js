@@ -1,18 +1,25 @@
 import React from 'react';
-import style from './filmsList.module.css';
-import FilmListItem from './FilmListItem';
+import OrderBy from '../../../components/OrderBy/OrderBy';
 import SearchInput from '../../../components/SearchInput/SearchInput';
 import { useSearch } from '../../../hooks/useSearch';
+import { useSort } from '../../../hooks/useSort';
+import FilmListItem from './FilmListItem';
 
 function FilmsList({ films, onSelect, selected }) {
+  const { data: sortedData, onSort, currentSortKey } = useSort(films);
   const {
     data: searchResults,
     onChange,
     searchText,
-  } = useSearch(films, 'title');
+  } = useSearch(sortedData, 'title');
 
   return (
-    <>
+    <div>
+      <OrderBy
+        orderKeys={['episode_id', 'release_date']}
+        onChangeOrder={onSort}
+        currentSortKey={currentSortKey}
+      />
       <SearchInput value={searchText} onChange={onChange} />
       {searchResults?.map((film) => (
         <FilmListItem
@@ -22,7 +29,7 @@ function FilmsList({ films, onSelect, selected }) {
           selected={selected}
         />
       ))}
-    </>
+    </div>
   );
 }
 
