@@ -1,0 +1,26 @@
+.itemContainer {
+  padding: 10px;
+  background-color: #000;
+  margin-top: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.itemContainer:hover {
+  border: 2px solid #f0f0f0;
+}
+
+.selectedItemContainer {
+  padding: 10px;
+  background-color: #000;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.episodeAndReleaseContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
