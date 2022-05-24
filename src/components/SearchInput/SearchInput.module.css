@@ -1,0 +1,23 @@
+.container {
+  border: 1px solid #f0f0f0;
+  display: flex;
+  height: 30px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #3c3c3c50;
+}
+.container :focus .container {
+  border: 1px solid #00f;
+}
+.searchInput {
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 1em;
+  margin-right: 10px;
+}
