@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './filmsList.module.css';
-import FilmListItem from '../../../../../etraveli/src/pages/films/filmsList/FilmListItem';
-
+import FilmListItem from './FilmListItem';
 function FilmsList({ films, onSelect, selected }) {
   return (
     <>
